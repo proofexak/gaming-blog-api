@@ -32,7 +32,7 @@ development:
   username: admin
 
   # The password associated with the postgres role (username).
-  password: Rails.application.credentials[:development][:database][:password]
+  password: <%= Rails.application.credentials[:development][:database][:password] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -59,7 +59,7 @@ test:
   <<: *default
   database: gaming_blog_api_test
   username: admin
-  password: Rails.application.credentials[:test][:database][:password]
+  password: <%= Rails.application.credentials[:test][:database][:password] %>
   host: localhost
   port: 5432
 
@@ -86,4 +86,4 @@ production:
   <<: *default
   database: gaming_blog_api_production
   username: admin
-  password: Rails.application.credentials[:production][:database][:password]
+  password: <%= Rails.application.credentials[:production][:database][:password] %>
