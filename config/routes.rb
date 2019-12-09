@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :admins, defaults: { format: :json }, controllers: { sessions: 'api/admin/sessions' }, 
+    skip: [:registrations, :passwords]
+
+  namespace :api do
+    namespace :reviews do
+      get :testowo
+    end
+  end
 end
