@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: gaming_blog_api_development
+  database: blog_api_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: gaming_blog_api_test
+  database: blog_api_test
   username: admin
   password: <%= Rails.application.credentials[:test][:database][:password] %>
   host: localhost
@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: gaming_blog_api_production
+  database: blog_api_production
   username: admin
   password: <%= Rails.application.credentials[:production][:database][:password] %>
