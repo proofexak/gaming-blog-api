@@ -3,8 +3,6 @@ Rails.application.routes.draw do
     skip: [:registrations, :passwords]
 
   namespace :api do
-    namespace :reviews do
-      get :testowo
-    end
+    resources :posts
   end
 end
