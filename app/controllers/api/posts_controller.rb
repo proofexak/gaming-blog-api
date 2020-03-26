@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-  before_action :authenticate_admin!, except: %w[index]
+  before_action :authenticate_admin!, except: %w[index show]
   before_action :set_post, only: %w[show update]
 
   respond_to :json
