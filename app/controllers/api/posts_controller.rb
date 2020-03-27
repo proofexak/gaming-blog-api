@@ -30,6 +30,6 @@ class Api::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :description, :content)
+    params.except(:id).permit(:title, :description, :content, :title_image)
   end
 end
